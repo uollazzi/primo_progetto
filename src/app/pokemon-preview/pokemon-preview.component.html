@@ -17,7 +17,7 @@
   </div>
   <div>
     <h3>Attacks</h3>
-    <app-pokemon-attack *ngFor="let a of pokemon.attacks" [attack]="a">
+    <app-pokemon-attack *ngFor="let a of pokemon.attacks" [attack]="a" (onAttackSelected)="attaccoSelezionato($event)">
     </app-pokemon-attack>
   </div>
 

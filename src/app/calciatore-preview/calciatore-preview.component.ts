@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Calciatore } from '../models/calciatore';
 
 @Component({
@@ -10,4 +10,13 @@ export class CalciatorePreviewComponent {
 
   @Input()
   calciatore?: Calciatore;
+
+  @Output()
+  onTiroEffettuato = new EventEmitter<Calciatore>();
+
+  tira() {
+    console.log("preview.tira():", this.calciatore);
+
+    this.onTiroEffettuato.emit(this.calciatore);
+  }
 }

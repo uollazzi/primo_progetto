@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'primo_progetto';
+
+  pagina = "prodotti";
+
+  pagine = [
+    "prodotti",
+    "calciatori",
+    "pokemon"
+  ];
+
+  naviga(p: string) {
+    this.pagina = p;
+  }
 }

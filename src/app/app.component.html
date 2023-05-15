@@ -4,6 +4,13 @@
 <h2>pippo</h2> -->
 <!-- <app-pokemons></app-pokemons> -->
 
-<!-- <app-prodotti-list></app-prodotti-list>
-<app-calciatori-list></app-calciatori-list> -->
-<app-pokemon-list></app-pokemon-list>
+<!-- <button type="button" (click)="naviga('prodotti')">PRODOTTI</button>
+<button type="button" (click)="naviga('calciatori')">CALCIATORI</button>
+<button type="button" (click)="naviga('pokemon')">POKEMONS</button> -->
+
+<!-- TODO: MENU OUTPUT -->
+<button type="button" *ngFor="let p of pagine" (click)="naviga(p)">{{p | uppercase}}</button>
+<hr>
+<app-prodotti-list *ngIf="pagina == 'prodotti'"></app-prodotti-list>
+<app-calciatori-list *ngIf="pagina == 'calciatori'"></app-calciatori-list>
+<app-pokemon-list *ngIf="pagina == 'pokemon'"></app-pokemon-list>

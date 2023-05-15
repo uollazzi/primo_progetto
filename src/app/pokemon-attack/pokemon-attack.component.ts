@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Attack } from '../models/pokemon';
 
 @Component({
@@ -8,5 +8,14 @@ import { Attack } from '../models/pokemon';
 })
 export class PokemonAttackComponent {
   @Input()
-  attack?: Attack
+  attack?: Attack;
+
+  @Output()
+  onAttackSelected = new EventEmitter<Attack>(); // generics
+
+  attacca() {
+    // console.log(this.attack);
+
+    this.onAttackSelected.emit(this.attack);
+  }
 }

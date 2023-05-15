@@ -1,1 +1,3 @@
-<app-calciatore-preview *ngFor="let c of calciatori" [calciatore]="c"></app-calciatore-preview>
+<h1>{{messaggio}}</h1>
+<app-calciatore-preview *ngFor="let c of calciatori" [calciatore]="c"
+  (onTiroEffettuato)="tiroInPorta($event)"></app-calciatore-preview>
