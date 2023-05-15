@@ -1,0 +1,50 @@
+<p>
+  <input type="number" [(ngModel)]="hpFortissimo">
+  {{hpFortissimo}}
+</p>
+
+<p>
+  <input type="checkbox" [(ngModel)]="pannelloAperto">
+  <!-- <span *ngIf="pannelloAperto">Nascondi</span>
+  <span *ngIf="!pannelloAperto">Mostra</span> -->
+
+  {{pannelloAperto ? "Nascondi" : "Mostra"}} Pannello
+</p>
+
+<p>
+  <button type="button" (click)="messaggioAlert($event, 'Ciao')">Messaggio</button>
+</p>
+
+<div class="pannello" *ngIf="pannelloAperto">
+  <div *ngFor="let pokemon of data" class="pokemon"
+    [ngClass]="{'lightning': pokemon.types[0].toLowerCase() == 'lightning', 'water': pokemon.types[0] == 'Water', 'fortissimo': +pokemon.hp >= hpFortissimo}">
+    <input type="text" [(ngModel)]="pokemon.name">
+    <div *ngIf="+pokemon.hp >= hpFortissimo" style="color: red">
+      FORTISSIMO
+    </div>
+    <p>
+      {{+pokemon.hp >= hpFortissimo ? "FORTISSIMO" : "FORTE MA NON FORTISSIMO"}}
+    </p>
+    <h1>{{pokemon.name}} level {{pokemon.level}}</h1>
+    <p>{{pokemon.hp}}</p>
+    <img [src]="pokemon.images.small">
+    <div>
+      <h3>Weacknesses</h3>
+      <div *ngFor="let w of pokemon.weaknesses">
+        {{w.type}}: {{w.value}}
+      </div>
+    </div>
+    <div>
+      <h3>Attacks</h3>
+      <div *ngFor="let a of pokemon.attacks">
+        <h4>{{a.name}}</h4>
+        <ul>
+          <li *ngFor="let c of a.cost">
+            {{c}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

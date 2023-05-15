@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
+.header {
+  width: 100%;
+  background-color: pink;
+  padding: 1rem;
+}
+
+.pokemon {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.lightning {
+  background-color: yellow;
+}
+
+.water {
+  background-color: aqua;
+}
+
+.fortissimo {
+  border: 5px red solid;
+}

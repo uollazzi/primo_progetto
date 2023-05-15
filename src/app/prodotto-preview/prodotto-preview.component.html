@@ -1,0 +1,7 @@
+<div *ngIf="prodotto != undefined" class="pokemon">
+  <h3>{{prodotto.nome}}</h3>
+  <p>{{prodotto.prezzo | currency:'EUR'}}</p>
+</div>
+<div *ngIf="prodotto == undefined">
+  Specificare un prodotto
+</div>

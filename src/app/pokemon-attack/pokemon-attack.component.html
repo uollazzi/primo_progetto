@@ -1,0 +1,9 @@
+<div *ngIf="attack">
+  <h4>{{attack.name}}</h4>
+  <ul>
+    <li *ngFor="let c of attack.cost">
+      {{c}}
+    </li>
+  </ul>
+  <button type="button">ATTACCA</button>
+</div>

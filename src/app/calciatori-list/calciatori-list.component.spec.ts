@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CalciatoriListComponent } from './calciatori-list.component';
+
+describe('CalciatoriListComponent', () => {
+  let component: CalciatoriListComponent;
+  let fixture: ComponentFixture<CalciatoriListComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [CalciatoriListComponent]
+    });
+    fixture = TestBed.createComponent(CalciatoriListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,0 +1,24 @@
+<div class="pokemon" *ngIf="pokemon"
+  [ngClass]="{'lightning': pokemon.types[0].toLowerCase() == 'lightning', 'water': pokemon.types[0] == 'Water', 'fortissimo': +pokemon.hp >= hpFortissimo}">
+  <input type="text" [(ngModel)]="pokemon.name">
+  <!-- <div *ngIf="+pokemon.hp >= hpFortissimo" style="color: red">
+    FORTISSIMO
+  </div>
+  <p>
+    {{+pokemon.hp >= hpFortissimo ? "FORTISSIMO" : "FORTE MA NON FORTISSIMO"}}
+  </p> -->
+  <h1>{{pokemon.name}} level {{pokemon.level}}</h1>
+  <p>{{pokemon.hp}}</p>
+  <img [src]="pokemon.images.small">
+  <div>
+    <h3>Weacknesses</h3>
+    <app-pokemon-weakness *ngFor="let w of pokemon.weaknesses" [weakness]="w">
+    </app-pokemon-weakness>
+  </div>
+  <div>
+    <h3>Attacks</h3>
+    <app-pokemon-attack *ngFor="let a of pokemon.attacks" [attack]="a">
+    </app-pokemon-attack>
+  </div>
+
+</div>
