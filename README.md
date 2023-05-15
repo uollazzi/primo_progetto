@@ -1,5 +1,7 @@
 # PrimoProgetto
 
+## Ciao
+
 1. Create un nuovo progetto
 2. Create un componmente header
 3. Create un componente footer
