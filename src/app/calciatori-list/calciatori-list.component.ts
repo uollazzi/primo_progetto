@@ -30,10 +30,16 @@ export class CalciatoriListComponent implements OnInit {
     }
   ]
 
+  nuovoCalciatore: Calciatore = { nome: "", numero: 0, piede: "destro" };
+
   messaggio = "";
 
   ngOnInit(): void {
-    this.inserisci({ nome: "Pippo", numero: 9, piede: "destro" });
+    this.reset();
+  }
+
+  reset() {
+    this.nuovoCalciatore = { nome: "", numero: 0, piede: "sinistro" };
   }
 
   tiroInPorta(calciatore: Calciatore) {
@@ -44,13 +50,14 @@ export class CalciatoriListComponent implements OnInit {
 
   elimina(c: Calciatore) {
     let i = this.calciatori.indexOf(c);
-    console.log(i);
+
     if (i > -1) {
       this.calciatori.splice(i, 1);
     }
   }
 
-  inserisci(c: Calciatore) {
-    this.calciatori.push(c);
+  inserisci() {
+    this.calciatori.push(this.nuovoCalciatore);
+    this.reset();
   }
 }

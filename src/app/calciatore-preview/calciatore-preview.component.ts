@@ -14,9 +14,16 @@ export class CalciatorePreviewComponent {
   @Output()
   onTiroEffettuato = new EventEmitter<Calciatore>();
 
+  @Output()
+  onDelete = new EventEmitter<Calciatore>();
+
   tira() {
     console.log("preview.tira():", this.calciatore);
 
     this.onTiroEffettuato.emit(this.calciatore);
+  }
+
+  cancellami() {
+    this.onDelete.emit(this.calciatore);
   }
 }

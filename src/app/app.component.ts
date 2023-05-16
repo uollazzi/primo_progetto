@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'primo_progetto';
 
-  pagina = "prodotti";
+  pagina = "calciatori";
 
   pagine = [
     "prodotti",

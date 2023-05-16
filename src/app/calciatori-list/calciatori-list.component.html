@@ -1,3 +1,27 @@
 <h1>{{messaggio}}</h1>
-<app-calciatore-preview *ngFor="let c of calciatori" [calciatore]="c"
-  (onTiroEffettuato)="tiroInPorta($event)"></app-calciatore-preview>
+
+<div class="lista-flex">
+  <app-calciatore-preview *ngFor="let c of calciatori" [calciatore]="c" (onTiroEffettuato)="tiroInPorta($event)"
+    (onDelete)="elimina($event)"></app-calciatore-preview>
+</div>
+<hr>
+<form (ngSubmit)="inserisci()">
+  <p>
+    <input type="text" name="nome" placeholder="Nome..." [(ngModel)]="nuovoCalciatore.nome">
+  </p>
+  <p>
+    <input type="number" name="numero" placeholder="Numero..." [(ngModel)]="nuovoCalciatore.numero">
+  </p>
+  <p>
+    <select [(ngModel)]="nuovoCalciatore.piede" name="piede">
+      <option value="destro">PIEDE DESTRO</option>
+      <option value="sinistro">PIEDE SINISTRO</option>
+    </select>
+  </p>
+  <p>
+    <button type="submit">INSERISCI</button>
+  </p>
+</form>
+<!-- <pre>
+{{nuovoCalciatore | json}}
+</pre> -->
