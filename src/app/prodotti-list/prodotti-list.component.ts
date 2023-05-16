@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Prodotto } from '../models/prodotto';
+import { PRODOTTI } from '../dati';
 
 @Component({
   selector: 'app-prodotti-list',
@@ -8,16 +9,5 @@ import { Prodotto } from '../models/prodotto';
 })
 export class ProdottiListComponent {
   // facciamo finta che questi dati siano arrivati da un database
-  prodotti: Prodotto[] = [
-    {
-      id: 1,
-      nome: "Bici",
-      prezzo: 120
-    },
-    {
-      id: 2,
-      nome: "Salame",
-      prezzo: 10
-    }
-  ]
+  prodotti = PRODOTTI;
 }

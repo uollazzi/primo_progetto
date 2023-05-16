@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Calciatore } from '../models/calciatore';
+import { CALCIATORI } from '../dati';
 
 @Component({
   selector: 'app-calciatori-list',
@@ -7,28 +8,7 @@ import { Calciatore } from '../models/calciatore';
   styleUrls: ['./calciatori-list.component.css']
 })
 export class CalciatoriListComponent implements OnInit {
-  calciatori: Calciatore[] = [
-    {
-      nome: "Francesco Totti",
-      numero: 10,
-      piede: "destro"
-    },
-    {
-      nome: "Roberto Baggio",
-      numero: 10,
-      piede: "destro"
-    },
-    {
-      nome: "Roberto Carlos",
-      numero: 3,
-      piede: "sinistro"
-    },
-    {
-      nome: "Ismael Benacer",
-      numero: 4,
-      piede: "sinistro"
-    }
-  ]
+  calciatori = CALCIATORI;
 
   nuovoCalciatore: Calciatore = { nome: "", numero: 0, piede: "destro" };
 
